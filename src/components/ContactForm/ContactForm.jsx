@@ -11,14 +11,14 @@ const ContactForm = ({ onAdd, onCheckUnique }) => {
     const { name, value } = event.target;
     dispatch(setData({ [name]: value }));
   };
-  console.log('data', data);
+
   const handleFormSubmit = event => {
     event.preventDefault();
     const { name, phone } = data;
 
     const isValidateForm = validateForm();
     if (!isValidateForm) return;
-    onAdd({ id: nanoid(), name, phone });
+    onAdd({ name, phone });
     dispatch(setDataInitialState());
   };
   const validateForm = () => {

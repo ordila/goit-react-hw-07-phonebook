@@ -11,7 +11,7 @@ const dataSlicer = createSlice({
     setData: (state, action) => {
       return { ...state, ...action.payload };
     },
-    setDataInitialState: (state, action) => {
+    setDataInitialState: () => {
       return { ...initialState };
     },
   },
